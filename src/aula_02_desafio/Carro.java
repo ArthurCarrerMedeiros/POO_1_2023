@@ -3,9 +3,19 @@ package aula_02_desafio;
 public class Carro {
 	private String marca;
 	private int anoFabricacao;
-	private Cor cor;
+	private String cor;
 	
-	public void cadastrarCarro(String marca, int anoFabricacao, Cor cor) {
+	public Carro() {
+	}
+	
+	public Carro(String marca, int anoFabricacao, String cor) {
+		super();
+		this.marca = marca;
+		this.anoFabricacao = anoFabricacao;
+		this.cor = cor;
+	}
+	
+	public void cadastrarCarro(String marca, int anoFabricacao, String cor) {
 		this.marca = marca;
 		this.anoFabricacao = anoFabricacao;
 		this.cor = cor;
@@ -17,14 +27,12 @@ public class Carro {
 	public int getAnoFabricacao() {
 		return anoFabricacao;
 	}
-	public Cor getCor() {
+	public String getCor() {
 		return cor;
 	}
-	
-	public Carro(String marca, int anoFabricacao, Cor cor) {
-		super();
-		this.marca = marca;
-		this.anoFabricacao = anoFabricacao;
-		this.cor = cor;
+
+	@Override
+	public String toString() {
+		return "Carro [marca=" + marca + ", anoFabricacao=" + anoFabricacao + ", cor=" + cor + "]";
 	}
 }
