@@ -9,16 +9,9 @@ public class Time {
 	private String nome;
 	private List<Jogador> jogadores = new ArrayList<>();
 
-	public void pesquisaTime(String nomeTime) {
-		if(nome.equalsIgnoreCase(nomeTime)) {
-			JOptionPane.showMessageDialog(null, exibir());
-			JOptionPane.showMessageDialog(null, artilheiroTime());
-		}
-	}
-
 	public void cadastrar() {
 		setNome(JOptionPane.showInputDialog("Informe o nome do time"));
-		String continua = "";
+		String continua;
 		
 		do {
 			Jogador j = new Jogador();
