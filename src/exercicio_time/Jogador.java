@@ -14,7 +14,7 @@ public class Jogador {
 	}
 	
 	String exibir() {
-		return getNome() + "-" + getCamisa() + "-" + getGols() + "\n";
+		return "O jogador " + getNome() + " - Camisa número " + getCamisa() + " - Saldo de gols " + getGols() + "\n";
 	}
 	
 	public String getNome() {

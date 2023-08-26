@@ -8,7 +8,14 @@ import javax.swing.JOptionPane;
 public class Time {
 	private String nome;
 	private List<Jogador> jogadores = new ArrayList<>();
-	
+
+	public void pesquisaTime(String nomeTime) {
+		if(nome.equalsIgnoreCase(nomeTime)) {
+			JOptionPane.showMessageDialog(null, exibir());
+			JOptionPane.showMessageDialog(null, artilheiroTime());
+		}
+	}
+
 	public void cadastrar() {
 		setNome(JOptionPane.showInputDialog("Informe o nome do time"));
 		String continua = "";
@@ -46,6 +53,7 @@ public class Time {
 	
 	public int getGolsTime() {
 		int gols = 0;
+
 		for(Jogador j : jogadores) {
 			gols += j.getGols();
 		}
