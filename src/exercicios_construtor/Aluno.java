@@ -1,48 +1,39 @@
 package exercicios_construtor;
 
-import javax.swing.*;
 import java.util.ArrayList;
-import java.util.List;
+
+import javax.swing.JOptionPane;
 
 public class Aluno {
+
 	private String nome;
-	private List<Disciplina> disciplinas;
+	private ArrayList<Disciplina> discMatriculadas = new ArrayList<Disciplina>();
+	private ArrayList<Nota> notas = new ArrayList<Nota>();
 
-	public Aluno(){
-	}
-
-	public Aluno(String nome, List<Disciplina> disciplinas) {
-		this.nome = nome;
-		this.disciplinas = disciplinas;
-	}
-
-	public static Aluno cadastrarAluno() {
-		int escolha;
-		String nome;
-		List<Disciplina> disciplinas = new ArrayList<>();
-
-		nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
-
-		while(Integer.parseInt(JOptionPane.showInputDialog("Deseja cadastrar uma disciplina para o aluno?\n1 - Sim\n2 - Não")) == 1) {
-			disciplinas.add(Disciplina.cadastrarDisciplina());
-		}
-
-		return new Aluno(nome, disciplinas);
+	public void cadastra() {
+		setNome(JOptionPane.showInputDialog("Nome do aluno"));
 	}
 
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	public List<Disciplina> getDisciplinas() {
-		return disciplinas;
+	public ArrayList<Disciplina> getDiscMatriculadas() {
+		return discMatriculadas;
+	}
+	public void setDiscMatriculadas(ArrayList<Disciplina> discMatriculadas) {
+		this.discMatriculadas = discMatriculadas;
+	}
+	public ArrayList<Nota> getNotas() {
+		return notas;
+	}
+	public void setNotas(ArrayList<Nota> notas) {
+		this.notas = notas;
 	}
 
-	public void setDisciplinas(List<Disciplina> disciplinas) {
-		this.disciplinas = disciplinas;
-	}
+
+
+
 }
