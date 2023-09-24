@@ -1,56 +1,62 @@
 package exercicio_medicamento;
 
-import java.util.ArrayList;
+import javax.swing.*;
 import java.util.List;
-import javax.swing.JOptionPane;
 
 public class Pessoa {
 	private String nome;
 	private String sintoma;
-	private List<String> condicoesDeSaude;
-	private List<Medicamento> medicamentosPrescritos;
+	private List<String> condSaude;
+	private List<Medicamento> medicamentos;
 
-	public Pessoa(String nome, String sintoma, List<String> condicoesDeSaude) {
+	public Pessoa() {
+	}
+
+	public Pessoa(String nome, String sintoma, List<String> condSaude, List<Medicamento> medicamentos) {
 		this.nome = nome;
 		this.sintoma = sintoma;
-		this.condicoesDeSaude = condicoesDeSaude;
-		this.medicamentosPrescritos = new ArrayList<>();
+		this.condSaude = condSaude;
+		this.medicamentos = medicamentos;
+	}
+
+	public static void cadastrar() {
+		JOptionPane.showInputDialog("Digite o nome do paciente: ");
+
+	}
+
+	public static void cadastrarSintoma() {
+		JOptionPane.showInputDialog("Deseja ")
 	}
 
 	public String getNome() {
 		return nome;
 	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	public String getSintoma() {
 		return sintoma;
 	}
 
-	public List<String> getCondicoesDeSaude() {
-		return condicoesDeSaude;
+	public void setSintoma(String sintoma) {
+		this.sintoma = sintoma;
 	}
 
-	public List<Medicamento> getMedicamentosPrescritos() {
-		return medicamentosPrescritos;
+	public List<String> getCondSaude() {
+		return condSaude;
 	}
 
-	public void prescreverMedicamento(Medicamento medicamento) {
-		if (verificarPrescricao(medicamento)) {
-			medicamentosPrescritos.add(medicamento);
-			JOptionPane.showMessageDialog(null, "Medicamento " + medicamento.getNome() + " prescrito para " + nome);
-		} else {
-			JOptionPane.showMessageDialog(null, "A prescricao do medicamento " + medicamento.getNome() + " não é recomendada para " + nome);
-		}
+	public void setCondSaude(List<String> condSaude) {
+		this.condSaude = condSaude;
 	}
 
-	private boolean verificarPrescricao(Medicamento medicamento) {
-		if (!medicamento.getIndicacoes().contains(sintoma)) {
-			return false;
-		}
-		for (String condicao : condicoesDeSaude) {
-			if (medicamento.getContraindicacoes().contains(condicao)) {
-				return false;
-			}
-		}
-		return true;
+	public List<Medicamento> getMedicamentos() {
+		return medicamentos;
+	}
+
+	public void setMedicamentos(List<Medicamento> medicamentos) {
+		this.medicamentos = medicamentos;
 	}
 }

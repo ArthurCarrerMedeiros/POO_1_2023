@@ -1,16 +1,20 @@
 package exercicio_medicamento;
+
 import java.util.List;
 
 public class Medicamento {
 	private String nome;
-	private String administracao;
-	private List<String> contraindicacoes;
+	private String admin;
+	private List<String> contraIndicacoes;
 	private List<String> indicacoes;
 
-	public Medicamento(String nome, String administracao, List<String> contraindicacoes, List<String> indicacoes) {
+	public Medicamento(){
+	}
+
+	public Medicamento(String nome, String admin, List<String> contraIndicacoes, List<String> indicacoes) {
 		this.nome = nome;
-		this.administracao = administracao;
-		this.contraindicacoes = contraindicacoes;
+		this.admin = admin;
+		this.contraIndicacoes = contraIndicacoes;
 		this.indicacoes = indicacoes;
 	}
 
@@ -18,15 +22,31 @@ public class Medicamento {
 		return nome;
 	}
 
-	public String getAdministracao() {
-		return administracao;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public List<String> getContraindicacoes() {
-		return contraindicacoes;
+	public String getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(String admin) {
+		this.admin = admin;
+	}
+
+	public List<String> getContraIndicacoes() {
+		return contraIndicacoes;
+	}
+
+	public void setContraIndicacoes(List<String> contraIndicacoes) {
+		this.contraIndicacoes = contraIndicacoes;
 	}
 
 	public List<String> getIndicacoes() {
 		return indicacoes;
+	}
+
+	public void setIndicacoes(List<String> indicacoes) {
+		this.indicacoes = indicacoes;
 	}
 }
