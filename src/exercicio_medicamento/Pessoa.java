@@ -19,13 +19,23 @@ public class Pessoa {
 		this.medicamentos = medicamentos;
 	}
 
-	public static void cadastrar() {
-		JOptionPane.showInputDialog("Digite o nome do paciente: ");
+	public static Pessoa cadastrar() {
+		String nome = JOptionPane.showInputDialog("Digite o nome do paciente: ");
+		String sintoma = cadastrarSintoma();
 
 	}
 
-	public static void cadastrarSintoma() {
-		JOptionPane.showInputDialog("Deseja ")
+	public static String cadastrarSintoma() {
+		int condicao = Integer.parseInt(JOptionPane.showInputDialog("Deseja cadastrar um sintoma?\n1 - Sim\n2 - Não"));
+
+		if(condicao == 1) {
+			return JOptionPane.showInputDialog("Qual o nome do sintoma?");
+		}
+		return null;
+	}
+
+	public static List<CondicaoSaude> cadastrarCondicao() {
+		
 	}
 
 	public String getNome() {
