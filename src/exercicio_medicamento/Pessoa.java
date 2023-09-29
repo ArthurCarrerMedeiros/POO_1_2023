@@ -22,7 +22,7 @@ public class Pessoa {
 	public static Pessoa cadastrar() {
 		String nome = JOptionPane.showInputDialog("Digite o nome do paciente: ");
 		String sintoma = cadastrarSintoma();
-
+		return new Pessoa();
 	}
 
 	public static String cadastrarSintoma() {
@@ -35,7 +35,7 @@ public class Pessoa {
 	}
 
 	public static List<CondicaoSaude> cadastrarCondicao() {
-		
+
 	}
 
 	public String getNome() {
