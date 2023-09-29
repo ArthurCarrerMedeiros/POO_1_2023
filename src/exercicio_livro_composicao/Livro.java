@@ -16,10 +16,6 @@ public class Livro {
 		this.bibliotecario = bibliotecario;
 	}
 
-	public Livro cadastrar() {
-
-	}
-
 	public String getNome() {
 		return nome;
 	}

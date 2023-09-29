@@ -35,7 +35,7 @@ public class Pessoa {
 	}
 
 	public static List<CondicaoSaude> cadastrarCondicao() {
-
+		return null;
 	}
 
 	public String getNome() {
