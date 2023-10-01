@@ -15,5 +15,4 @@ public class Util {
 		int escolha = Integer.parseInt(JOptionPane.showInputDialog(menuAl));
 		return lista.get(escolha-1);
 	}
-
 }

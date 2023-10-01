@@ -7,7 +7,6 @@ public class Nota {
 	private double n2;
 	private double n3;
 
-
 	public Disciplina getDisc() {
 		return disc;
 	}
@@ -32,5 +31,4 @@ public class Nota {
 	public void setN3(double n3) {
 		this.n3 = n3;
 	}
-
 }

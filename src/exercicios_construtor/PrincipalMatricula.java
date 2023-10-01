@@ -44,5 +44,4 @@ public class PrincipalMatricula {
 	public static void matricula() {
 		Aluno a = Util.selecionaAluno(alunos);
 	}
-
 }

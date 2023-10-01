@@ -32,8 +32,4 @@ public class Aluno {
 	public void setNotas(ArrayList<Nota> notas) {
 		this.notas = notas;
 	}
-
-
-
-
 }

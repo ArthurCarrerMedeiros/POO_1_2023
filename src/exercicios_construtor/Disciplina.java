@@ -45,7 +45,4 @@ public class Disciplina {
 	public void setProfessor(Professor professor) {
 		this.professor = professor;
 	}
-
-
-
 }

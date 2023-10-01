@@ -1,6 +1,8 @@
 package exercicio_condominio;
 
 import javax.swing.*;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Despesa {
 	private String descricao;
@@ -20,13 +22,20 @@ public class Despesa {
 		this.numeroApartamento = numeroApartamento;
 	}
 
-	public static Despesa cadastrar() {
+	public static Despesa cadastrar(List<Apartamento> apartamentos) {
+		Despesa despesa = null;
 		String nome = JOptionPane.showInputDialog("Digite o nome da despesa: ");
-		int ano = Integer.parseInt("Qual o ano da despesa?");
-		int mes = Integer.parseInt("Qual o mês da despesa?");
-		double valor = Double.parseDouble("Qual o valor da despesa");
-		double numeroAp = Double.parseDouble("Qual o numero do apartamento da despesa");
-		return new Despesa(nome, ano, mes, valor, numeroAp);
+		int ano = Integer.parseInt(JOptionPane.showInputDialog("Qual o ano da despesa?"));
+		int mes = Integer.parseInt(JOptionPane.showInputDialog("Qual o mês da despesa?"));
+		double valor = Double.parseDouble(JOptionPane.showInputDialog("Qual o valor da despesa"));
+		double numeroAp = Double.parseDouble(JOptionPane.showInputDialog("Qual o numero do apartamento da despesa"));
+		
+		List<Apartamento> apFiltrado = apartamentos.stream().filter(x -> x.getNumero() == numeroAp).toList();
+		if (apFiltrado.size() == 1) {
+			despesa = new Despesa(nome, ano, mes, valor, numeroAp);
+			apFiltrado.get(0).getDespesas().add(despesa);
+		}
+		return despesa;
 	}
 
 	public String getDescricao() {
