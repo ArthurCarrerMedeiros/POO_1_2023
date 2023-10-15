@@ -6,6 +6,15 @@ public class Conta implements OperacoesConta {
 	protected String nomeCorrentista;
 	protected double saldo;
 
+	public Conta() {
+	}
+
+	public Conta(double numero, String agencia, String nomeCorrentista, double saldo) {
+		this.numero = numero;
+		this.agencia = agencia;
+		this.nomeCorrentista = nomeCorrentista;
+		this.saldo = saldo;
+	}
 
 	@Override
 	public void depositar(double valor) {
@@ -13,13 +22,13 @@ public class Conta implements OperacoesConta {
 	}
 
 	@Override
-	public void saque(double valor) throws SaldoException {
+	public void saque(double valor) throws SaldoException, LimiteException {
 		verificaSaldo(valor);
 		this.saldo -= valor;
 	}
 
 	@Override
-	public void transferencia(double valor, Conta conta) throws SaldoException {
+	public void transferencia(double valor, Conta conta) throws SaldoException, LimiteException {
 		verificaSaldo(valor);
 		this.saldo -= valor;
 		conta.saldo += valor;
