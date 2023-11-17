@@ -39,4 +39,36 @@ public class Conta implements OperacoesConta {
 			throw new SaldoException();
 		}
 	}
+
+	public double getNumero() {
+		return numero;
+	}
+
+	public void setNumero(double numero) {
+		this.numero = numero;
+	}
+
+	public String getAgencia() {
+		return agencia;
+	}
+
+	public void setAgencia(String agencia) {
+		this.agencia = agencia;
+	}
+
+	public String getNomeCorrentista() {
+		return nomeCorrentista;
+	}
+
+	public void setNomeCorrentista(String nomeCorrentista) {
+		this.nomeCorrentista = nomeCorrentista;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
 }

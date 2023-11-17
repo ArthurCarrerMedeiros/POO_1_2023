@@ -1,0 +1,14 @@
+package exercicio_contas;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class ContaTest {
+    @Test
+    void depositarTeste() {
+        Conta c = new Conta();
+        c.depositar(2000.00);
+        assertEquals(c.getSaldo(), 2000.00);
+    }
+}
